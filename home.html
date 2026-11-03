@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'M Production - Coming Soon</title>
+    <!-- Custom Logo Favicon -->
+    <link rel="icon" type="image/png" href="New Logo I'M.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#050507',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Elite Cinematic Entrance (Clip-path Mask Reveal) */
+        @keyframes maskReveal {
+            0% {
+                clip-path: inset(100% 0 0 0);
+                transform: translateY(35px);
+                opacity: 0;
+            }
+            100% {
+                clip-path: inset(0 0 0 0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Smooth Fade Up for Sub-elements */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+                filter: blur(8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        /* High-End Continuous Breathing Glow with Gold Hint */
+        @keyframes eliteGlowPulse {
+            0%, 100% {
+                color: #ffffff;
+                text-shadow: 0 0 25px rgba(255, 255, 255, 0.25), 0 0 50px rgba(234, 179, 8, 0.1);
+            }
+            50% {
+                color: #fef3c7;
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.55), 0 0 80px rgba(217, 119, 6, 0.25);
+            }
+        }
+
+        /* Floating Gold Ambient Orbs */
+        @keyframes ambientDrift1 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+            50% { transform: translate(60px, -70px) scale(1.2); opacity: 0.45; }
+        }
+
+        @keyframes ambientDrift2 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+            50% { transform: translate(-70px, 60px) scale(1.15); opacity: 0.4; }
+        }
+
+        /* Subtle Shimmer for Gold Frames */
+        @keyframes goldShimmer {
+            0% { opacity: 0.2; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.2; }
+        }
+
+        /* Staggered Orchestrated Timings */
+        .reveal-brand {
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+            opacity: 0;
+        }
+
+        .reveal-title {
+            animation: maskReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards, eliteGlowPulse 5s ease-in-out infinite 1.7s;
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.4s ease;
+            cursor: default;
+        }
+
+        .reveal-title:hover {
+            transform: scale(1.03) translateY(-4px);
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 50px rgba(255, 255, 255, 0.8), 0 0 100px rgba(234, 179, 8, 0.4), 0 0 150px rgba(217, 119, 6, 0.25);
+            color: #ffffff;
+        }
+
+        .reveal-subtitle {
+            animation: fadeUp 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+            opacity: 0;
+        }
+
+        .reveal-divider {
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+            opacity: 0;
+        }
+
+        .reveal-desc {
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+            opacity: 0;
+        }
+
+        .reveal-footer {
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.1s forwards;
+            opacity: 0;
+        }
+
+        .orb-1 {
+            animation: ambientDrift1 18s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            animation: ambientDrift2 22s ease-in-out infinite;
+        }
+
+        .gold-frame {
+            animation: goldShimmer 4s ease-in-out infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050507; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-darkBg text-zinc-100 font-sans min-h-screen flex flex-col justify-between relative overflow-x-hidden selection:bg-amber-500 selection:text-black">
+
+    <!-- Luxury Gold Background Orbs -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-gradient-to-tr from-amber-600/15 via-yellow-700/5 to-transparent blur-[160px] rounded-full pointer-events-none orb-1"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-[650px] h-[450px] bg-gradient-to-bl from-amber-700/10 via-yellow-900/5 to-transparent blur-[150px] rounded-full pointer-events-none orb-2"></div>
+
+    <!-- Elegant Gold Corner Geometric Borders (Luxury Framing) -->
+    <div class="absolute top-6 left-6 w-16 h-16 border-t-2 border-l-2 border-amber-500/40 pointer-events-none gold-frame"></div>
+    <div class="absolute top-6 right-6 w-16 h-16 border-t-2 border-r-2 border-amber-500/40 pointer-events-none gold-frame"></div>
+    <div class="absolute bottom-6 left-6 w-16 h-16 border-b-2 border-l-2 border-amber-500/40 pointer-events-none gold-frame"></div>
+    <div class="absolute bottom-6 right-6 w-16 h-16 border-b-2 border-r-2 border-amber-500/40 pointer-events-none gold-frame"></div>
+
+    <!-- Header / Nav -->
+    <header class="w-full max-w-7xl mx-auto px-8 py-8 flex justify-between items-center z-10">
+        <div class="reveal-brand text-xs uppercase tracking-[0.35em] font-medium text-amber-500/80">
+            I'M Production
+        </div>
+        <div></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-6 z-10 my-auto">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Main Title with Interactive Hover Effect -->
+            <h1 class="reveal-title font-outfit font-extrabold text-5xl sm:text-7xl md:text-8xl tracking-tight uppercase mb-6">
+                I'M Production
+            </h1>
+
+            <!-- Subtitle / Coming Soon -->
+            <p class="reveal-subtitle font-outfit font-light text-xl sm:text-2xl md:text-3xl tracking-[0.45em] text-zinc-400 uppercase">
+                Coming Soon
+            </p>
+
+            <!-- Refined Gold-Accent Divider Line -->
+            <div class="reveal-divider flex items-center justify-center gap-3 mx-auto mt-10 mb-10">
+                <div class="w-12 h-[1px] bg-gradient-to-r from-transparent to-amber-500/60"></div>
+                <div class="w-2 h-2 rotate-45 border border-amber-500/80 bg-amber-500/20"></div>
+                <div class="w-12 h-[1px] bg-gradient-to-l from-transparent to-amber-500/60"></div>
+            </div>
+
+            <!-- Clean Two-Line Descriptive Text -->
+            <div class="reveal-desc text-sm text-zinc-400 max-w-md mx-auto font-light leading-relaxed tracking-wide space-y-1">
+                <p>We are crafting a new digital experience</p>
+                <p class="text-zinc-500">Stay tuned for our upcoming platform launch</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="reveal-footer w-full max-w-7xl mx-auto px-8 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 z-10 text-xs text-zinc-600 border-t border-zinc-900/80">
+        <p>&copy; <span id="year"></span> I'M Production. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+            <a href="#" class="hover:text-amber-400 transition-colors">Instagram</a>
+            <a href="#" class="hover:text-amber-400 transition-colors">YouTube</a>
+            <a href="#" class="hover:text-amber-400 transition-colors">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Auto update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

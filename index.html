@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'M Production — Certified Running Coaching & Digital Platform</title>
-    <!-- Custom Logo Favicon -->
-    <link rel="icon" type="image/png" href="New%20Logo%20I'M.png?v=4">
-    <link rel="shortcut icon" type="image/png" href="New%20Logo%20I'M.png?v=4">
+    <title>I'M Production - Coming Soon</title>
+    <!-- Custom Logo Favicon with Cache Buster -->
+    <link rel="icon" type="image/png" href="New%20Logo%20I'M.png?v=3">
+    <link rel="shortcut icon" type="image/png" href="New%20Logo%20I'M.png?v=3">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -23,28 +23,131 @@
                     },
                     colors: {
                         darkBg: '#050507',
-                        cardBg: '#0c0c10',
                     }
                 }
             }
         }
     </script>
     <style>
+        /* Elite Cinematic Entrance (Clip-path Mask Reveal) */
+        @keyframes maskReveal {
+            0% {
+                clip-path: inset(100% 0 0 0);
+                transform: translateY(35px);
+                opacity: 0;
+            }
+            100% {
+                clip-path: inset(0 0 0 0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Smooth Fade Up for Sub-elements */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+                filter: blur(8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        /* Per-Character Gold Shimmer Wave Animation */
+        @keyframes letterGoldShimmer {
+            0%, 100% {
+                color: #ffffff;
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                color: #fef08a; /* Soft Gold */
+                text-shadow: 0 0 25px rgba(234, 179, 8, 0.6), 0 0 40px rgba(217, 119, 6, 0.3);
+            }
+        }
+
+        /* Floating Gold Ambient Orbs */
         @keyframes ambientDrift1 {
             0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
-            50% { transform: translate(50px, -60px) scale(1.15); opacity: 0.45; }
+            50% { transform: translate(60px, -70px) scale(1.2); opacity: 0.45; }
         }
+
         @keyframes ambientDrift2 {
             0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
-            50% { transform: translate(-60px, 50px) scale(1.1); opacity: 0.4; }
+            50% { transform: translate(-70px, 60px) scale(1.15); opacity: 0.4; }
         }
+
+        /* Subtle Shimmer for Gold Frames */
         @keyframes goldShimmer {
-            0%, 100% { opacity: 0.25; }
-            50% { opacity: 0.65; }
+            0% { opacity: 0.2; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.2; }
         }
-        .orb-1 { animation: ambientDrift1 18s ease-in-out infinite; }
-        .orb-2 { animation: ambientDrift2 22s ease-in-out infinite; }
-        .gold-frame { animation: goldShimmer 4s ease-in-out infinite; }
+
+        /* Staggered Orchestrated Timings */
+        .reveal-brand {
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+            opacity: 0;
+        }
+
+        .reveal-title-wrapper {
+            animation: maskReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+            opacity: 0;
+            display: inline-block;
+            cursor: default;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        /* Apply staggered continuous shimmer per letter */
+        .reveal-title-wrapper .char {
+            display: inline-block;
+            animation: letterGoldShimmer 4s ease-in-out infinite;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .reveal-title-wrapper .char:hover {
+            transform: translateY(-6px) scale(1.1);
+            color: #fde047;
+            text-shadow: 0 0 30px rgba(234, 179, 8, 0.9);
+        }
+
+        .reveal-subtitle {
+            animation: fadeUp 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+            opacity: 0;
+        }
+
+        .reveal-divider {
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+            opacity: 0;
+        }
+
+        .reveal-desc {
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+            opacity: 0;
+        }
+
+        .reveal-footer {
+            animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.1s forwards;
+            opacity: 0;
+        }
+
+        .orb-1 {
+            animation: ambientDrift1 18s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            animation: ambientDrift2 22s ease-in-out infinite;
+        }
+
+        .gold-frame {
+            animation: goldShimmer 4s ease-in-out infinite;
+        }
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #050507; }
         ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
@@ -53,745 +156,87 @@
 <body class="bg-darkBg text-zinc-100 font-sans min-h-screen flex flex-col justify-between relative overflow-x-hidden selection:bg-amber-500 selection:text-black">
 
     <!-- Luxury Gold Background Orbs -->
-    <div class="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-gradient-to-tr from-amber-600/15 via-yellow-700/5 to-transparent blur-[160px] rounded-full pointer-events-none orb-1"></div>
-    <div class="fixed bottom-1/4 right-1/3 w-[650px] h-[450px] bg-gradient-to-bl from-amber-700/10 via-yellow-900/5 to-transparent blur-[150px] rounded-full pointer-events-none orb-2"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-gradient-to-tr from-amber-600/15 via-yellow-700/5 to-transparent blur-[160px] rounded-full pointer-events-none orb-1"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-[650px] h-[450px] bg-gradient-to-bl from-amber-700/10 via-yellow-900/5 to-transparent blur-[150px] rounded-full pointer-events-none orb-2"></div>
 
-    <!-- Elegant Gold Corner Geometric Borders -->
-    <div class="fixed top-4 left-4 sm:top-6 sm:left-6 w-10 h-10 sm:w-14 sm:h-14 border-t-2 border-l-2 border-amber-500/40 pointer-events-none gold-frame z-20"></div>
-    <div class="fixed top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-14 sm:h-14 border-t-2 border-r-2 border-amber-500/40 pointer-events-none gold-frame z-20"></div>
-    <div class="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 w-10 h-10 sm:w-14 sm:h-14 border-b-2 border-l-2 border-amber-500/40 pointer-events-none gold-frame z-20"></div>
-    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-10 h-10 sm:w-14 sm:h-14 border-b-2 border-r-2 border-amber-500/40 pointer-events-none gold-frame z-20"></div>
+    <!-- Elegant Gold Corner Geometric Borders (Luxury Framing) -->
+    <div class="absolute top-4 left-4 sm:top-6 sm:left-6 w-10 h-10 sm:w-16 sm:h-16 border-t-2 border-l-2 border-amber-500/40 pointer-events-none gold-frame"></div>
+    <div class="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-16 sm:h-16 border-t-2 border-r-2 border-amber-500/40 pointer-events-none gold-frame"></div>
+    <div class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 w-10 h-16 border-b-2 border-l-2 border-amber-500/40 pointer-events-none gold-frame"></div>
+    <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-10 h-16 border-b-2 border-r-2 border-amber-500/40 pointer-events-none gold-frame"></div>
 
-    <!-- Top Navigation -->
-    <header class="w-full max-w-7xl mx-auto px-6 sm:px-10 py-6 flex justify-between items-center z-10 border-b border-zinc-900/70">
-        <div class="flex items-center gap-3">
-            <img src="New%20Logo%20I'M.png" alt="I'M Production Logo" class="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-[0_0_10px_rgba(234,179,8,0.4)]">
-            <div>
-                <span class="block text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold text-amber-400">
-                    I'M Production
-                </span>
-                <span class="block text-[10px] tracking-[0.2em] text-zinc-500 uppercase">
-                    International Certified Coaching
-                </span>
-            </div>
+    <!-- Header / Nav -->
+    <header class="w-full max-w-7xl mx-auto px-6 sm:px-8 py-6 sm:py-8 flex justify-between items-center z-10">
+        <div class="reveal-brand flex items-center gap-2 sm:gap-3">
+            <img src="New%20Logo%20I'M.png" alt="I'M Production Logo" class="w-7 h-7 sm:w-8 sm:h-8 object-contain drop-shadow-[0_0_10px_rgba(234,179,8,0.4)]">
+            <span class="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] font-medium text-amber-500/90 truncate max-w-[180px] sm:max-w-none">
+                I'M Production
+            </span>
         </div>
-
-        <!-- User Controls (Visible only when logged in) -->
-        <div id="nav-user-actions" class="hidden flex items-center gap-3 sm:gap-4">
-            <div class="hidden sm:block text-right">
-                <p id="nav-user-name" class="text-xs font-medium text-zinc-200"></p>
-                <p id="nav-user-email" class="text-[11px] text-zinc-500"></p>
-            </div>
-            <button onclick="openChangePasswordModal()" class="px-3 py-1.5 rounded-lg border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 text-xs transition-colors">
-                Ganti Password
-            </button>
-            <button onclick="handleLogout()" class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-red-500/40 hover:text-red-400 text-zinc-400 text-xs transition-colors">
-                Logout
-            </button>
-        </div>
+        <div></div>
     </header>
 
-    <!-- ========================================================= -->
-    <!-- VIEW 1: AUTH GATE (LOGIN / REGISTER / LUPA PASSWORD)      -->
-    <!-- ========================================================= -->
-    <main id="auth-view" class="flex-grow flex items-center justify-center px-4 sm:px-6 py-10 z-10">
-        <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-4 sm:px-6 z-10 my-auto py-8">
+        <div class="max-w-4xl mx-auto w-full">
             
-            <!-- Left Column: Brand Value Proposition -->
-            <div class="lg:col-span-6 text-center lg:text-left space-y-5 px-2">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-400 text-[11px] uppercase tracking-[0.2em]">
-                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                    Certified Running Performance Lab
-                </div>
-                <h1 class="font-outfit font-extrabold text-3xl sm:text-5xl tracking-tight text-white leading-tight">
-                    Elevate Your Run with <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-600">International Standards</span>
-                </h1>
-                <p class="text-sm text-zinc-400 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
-                    Platform eksklusif <strong class="text-zinc-200 font-medium">I'M Production</strong> yang dirancang dengan pendekatan kepelatihan lari bersertifikat internasional. Susun program latihan terukur, berbasis zona detak jantung, dan progresif sesuai target lomba Anda.
-                </p>
-                <div class="grid grid-cols-3 gap-3 pt-2 max-w-md mx-auto lg:mx-0 text-left">
-                    <div class="p-3 rounded-xl bg-zinc-900/50 border border-zinc-800/80">
-                        <p class="font-outfit font-bold text-amber-400 text-base">Scientific</p>
-                        <p class="text-[11px] text-zinc-500 mt-0.5">Periodisasi & Zona HR</p>
-                    </div>
-                    <div class="p-3 rounded-xl bg-zinc-900/50 border border-zinc-800/80">
-                        <p class="font-outfit font-bold text-amber-400 text-base">Tailored</p>
-                        <p class="text-[11px] text-zinc-500 mt-0.5">5K hingga Marathon</p>
-                    </div>
-                    <div class="p-3 rounded-xl bg-zinc-900/50 border border-zinc-800/80">
-                        <p class="font-outfit font-bold text-amber-400 text-base">Injury-Safe</p>
-                        <p class="text-[11px] text-zinc-500 mt-0.5">Beban Terkalibrasi</p>
-                    </div>
-                </div>
+            <!-- Main Title with Per-Character Shimmer Wave & Responsive Text Sizing -->
+            <h1 class="reveal-title-wrapper font-outfit font-extrabold text-[36px] xs:text-[44px] sm:text-6xl md:text-7xl lg:text-8xl tracking-tight uppercase mb-4 sm:mb-6 leading-tight" id="main-title">
+                I'M Production
+            </h1>
+
+            <!-- Subtitle / Coming Soon -->
+            <p class="reveal-subtitle font-outfit font-light text-sm xs:text-base sm:text-2xl md:text-3xl tracking-[0.3em] sm:tracking-[0.45em] text-zinc-400 uppercase">
+                Coming Soon
+            </p>
+
+            <!-- Refined Gold-Accent Divider Line -->
+            <div class="reveal-divider flex items-center justify-center gap-2 sm:gap-3 mx-auto mt-6 sm:mt-10 mb-6 sm:mb-10">
+                <div class="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-amber-500/60"></div>
+                <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rotate-45 border border-amber-500/80 bg-amber-500/20"></div>
+                <div class="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-amber-500/60"></div>
             </div>
 
-            <!-- Right Column: Auth Card -->
-            <div class="lg:col-span-6">
-                <div class="bg-cardBg/90 backdrop-blur-xl border border-amber-500/20 rounded-2xl p-6 sm:p-8 shadow-[0_0_50px_rgba(0,0,0,0.8)]">
-                    
-                    <!-- Tabs Switcher -->
-                    <div id="auth-tabs" class="grid grid-cols-2 gap-2 p-1 rounded-xl bg-zinc-950 border border-zinc-900 mb-6">
-                        <button id="tab-login" onclick="switchAuthTab('login')" class="py-2.5 text-xs font-semibold uppercase tracking-wider rounded-lg bg-gradient-to-r from-amber-500 to-yellow-600 text-black transition-all">
-                            Masuk (Login)
-                        </button>
-                        <button id="tab-register" onclick="switchAuthTab('register')" class="py-2.5 text-xs font-semibold uppercase tracking-wider rounded-lg text-zinc-400 hover:text-zinc-200 transition-all">
-                            Daftar Akun
-                        </button>
-                    </div>
-
-                    <!-- Global Notification Banner -->
-                    <div id="auth-alert" class="hidden mb-5 p-3.5 rounded-xl text-xs leading-relaxed border"></div>
-
-                    <!-- FORM 1: LOGIN -->
-                    <form id="form-login" onsubmit="submitLogin(event)" class="space-y-4">
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Email Terdaftar</label>
-                            <input type="email" id="login-email" required placeholder="nama@email.com"
-                                class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/60 transition-colors">
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-1.5">
-                                <label class="block text-xs text-zinc-400">Password</label>
-                                <button type="button" onclick="switchAuthTab('forgot')" class="text-[11px] text-amber-400 hover:text-amber-300">
-                                    Lupa password?
-                                </button>
-                            </div>
-                            <input type="password" id="login-password" required placeholder="••••••••"
-                                class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/60 transition-colors">
-                        </div>
-                        <button type="submit" id="btn-login"
-                            class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-500 text-black font-outfit font-bold text-sm uppercase tracking-wider shadow-lg shadow-amber-500/10 transition-all">
-                            Masuk ke Member Area
-                        </button>
-                    </form>
-
-                    <!-- FORM 2: REGISTER (Tanpa Running Goal) -->
-                    <form id="form-register" onsubmit="submitRegister(event)" class="hidden space-y-4">
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Nama Lengkap</label>
-                            <input type="text" id="reg-name" required placeholder="Masukkan nama lengkap Anda"
-                                class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/60 transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Alamat Email</label>
-                            <input type="email" id="reg-email" required placeholder="nama@email.com"
-                                class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/60 transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Password (Minimal 6 karakter)</label>
-                            <input type="password" id="reg-password" minlength="6" required placeholder="Buat password aman"
-                                class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/60 transition-colors">
-                        </div>
-                        <button type="submit" id="btn-register"
-                            class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-500 text-black font-outfit font-bold text-sm uppercase tracking-wider shadow-lg shadow-amber-500/10 transition-all">
-                            Daftar Sekarang
-                        </button>
-                    </form>
-
-                    <!-- FORM 3: LUPA PASSWORD -->
-                    <form id="form-forgot" onsubmit="submitForgotPassword(event)" class="hidden space-y-4">
-                        <div class="pb-1">
-                            <h3 class="font-outfit font-semibold text-base text-amber-400">Reset Password Akun</h3>
-                            <p class="text-xs text-zinc-500 mt-1">Masukkan email dan nama lengkap yang terdaftar untuk membuat password baru.</p>
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Email Terdaftar</label>
-                            <input type="email" id="forgot-email" required placeholder="nama@email.com"
-                                class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/60 transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Nama Lengkap Terdaftar</label>
-                            <input type="text" id="forgot-name" required placeholder="Sesuai saat mendaftar"
-                                class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/60 transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Password Baru (Minimal 6 karakter)</label>
-                            <input type="password" id="forgot-new-password" minlength="6" required placeholder="Masukkan password baru"
-                                class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500/60 transition-colors">
-                        </div>
-                        <button type="submit" id="btn-forgot"
-                            class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-outfit font-bold text-sm uppercase tracking-wider transition-all">
-                            Reset Password
-                        </button>
-                        <button type="button" onclick="switchAuthTab('login')" class="w-full py-2 text-xs text-zinc-400 hover:text-white">
-                            &larr; Kembali ke halaman Login
-                        </button>
-                    </form>
-
-                </div>
+            <!-- Clean Two-Line Descriptive Text -->
+            <div class="reveal-desc text-xs sm:text-sm text-zinc-400 max-w-xs sm:max-w-md mx-auto font-light leading-relaxed tracking-wide space-y-1 px-2">
+                <p>We are crafting a new digital experience</p>
+                <p class="text-zinc-500">Stay tuned for our upcoming platform launch</p>
             </div>
+
         </div>
     </main>
-
-    <!-- ========================================================= -->
-    <!-- VIEW 2: DASHBOARD MEMBER AREA (RUNNING TRAINING PLANNER)  -->
-    <!-- ========================================================= -->
-    <main id="dashboard-view" class="hidden flex-grow w-full max-w-7xl mx-auto px-6 sm:px-10 py-8 z-10 space-y-8">
-        
-        <!-- Coach Credentials Banner -->
-        <div class="rounded-2xl bg-gradient-to-r from-zinc-900/90 via-cardBg to-zinc-900/90 border border-amber-500/25 p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div class="space-y-2 max-w-2xl">
-                <div class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-amber-400 font-semibold">
-                    <span>★</span> International Certified Running Coach Methodology
-                </div>
-                <h2 class="font-outfit font-bold text-2xl sm:text-3xl text-white">
-                    Selamat Datang, <span id="dash-user-greeting" class="text-amber-400">Runner</span>!
-                </h2>
-                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                    Program latihan di bawah ini disusun mengikuti kaidah periodisasi ilmiah (80/20 Polarized & Pyramidal Endurance Model) untuk meningkatkan efisiensi aerobik, ambang laktat, dan daya tahan tanpa risiko cedera berlebih.
-                </p>
-            </div>
-            <div class="flex flex-wrap gap-2 text-[11px]">
-                <span class="px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300">IAAF / World Athletics Standard</span>
-                <span class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300">Heart-Rate & Pace Guided</span>
-            </div>
-        </div>
-
-        <!-- Running Program Configurator & Output -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
-            <!-- Parameter Input Form -->
-            <div class="lg:col-span-4">
-                <div class="bg-cardBg border border-zinc-800/90 rounded-2xl p-6 space-y-5 sticky top-6">
-                    <div class="border-b border-zinc-800/80 pb-4">
-                        <h3 class="font-outfit font-bold text-lg text-white">Parameter Latihan Anda</h3>
-                        <p class="text-xs text-zinc-500 mt-1">Sesuaikan target lomba & ketersediaan waktu mingguan.</p>
-                    </div>
-
-                    <form id="training-form" onsubmit="generateTrainingPlan(event)" class="space-y-4">
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Target Jarak Lomba</label>
-                            <select id="run-distance" class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-amber-500/60">
-                                <option value="5K">5K Road Race (Speed & VO2max)</option>
-                                <option value="10K" selected>10K Road Race (Lactate Threshold)</option>
-                                <option value="HM">Half Marathon — 21.1K (Endurance & Pace)</option>
-                                <option value="FM">Full Marathon — 42.2K (Aerobic Mastery)</option>
-                                <option value="BASE">General Aerobic & Fat-Burn Base</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Level Pelari Saat Ini</label>
-                            <select id="run-level" class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-amber-500/60">
-                                <option value="beginner">Beginner (Baru rutin lari / Run-Walk)</option>
-                                <option value="intermediate" selected>Intermediate (Rutin lari 20–35 km/minggu)</option>
-                                <option value="advanced">Advanced (Terbiasa interval & long run &gt;40 km/minggu)</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Frekuensi Latihan per Minggu</label>
-                            <select id="run-days" class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-amber-500/60">
-                                <option value="3">3 Hari / Minggu (Efisien & Padat)</option>
-                                <option value="4" selected>4 Hari / Minggu (Rekomendasi Ideal)</option>
-                                <option value="5">5 Hari / Minggu (Performa Kompetitif)</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs text-zinc-400 mb-1.5">Target Pace Lomba (menit/km)</label>
-                            <input type="text" id="run-target-pace" value="06:30" placeholder="Contoh: 06:30"
-                                class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-amber-500/60">
-                            <p class="text-[11px] text-zinc-500 mt-1">Digunakan untuk menghitung zona Easy, Tempo, dan Interval Anda.</p>
-                        </div>
-
-                        <button type="submit"
-                            class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-500 text-black font-outfit font-bold text-xs uppercase tracking-wider shadow-lg shadow-amber-500/10 transition-all">
-                            Susun Program Latihan
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Training Schedule Output -->
-            <div class="lg:col-span-8 space-y-6">
-                
-                <!-- Pace Zones Card -->
-                <div class="bg-cardBg border border-zinc-800/90 rounded-2xl p-6">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                        <div>
-                            <h3 class="font-outfit font-bold text-lg text-white">Kalibrasi Zona Latihan Pribadi</h3>
-                            <p class="text-xs text-zinc-500">Panduan intensitas berdasarkan target pace <span id="display-target-pace" class="text-amber-400 font-semibold">06:30/km</span></p>
-                        </div>
-                        <span id="display-program-badge" class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-medium self-start">
-                            10K • Intermediate • 4x/Minggu
-                        </span>
-                    </div>
-
-                    <div id="pace-zones-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-                        <!-- Filled dynamically by JS -->
-                    </div>
-                </div>
-
-                <!-- Weekly Microcycle Schedule -->
-                <div class="bg-cardBg border border-zinc-800/90 rounded-2xl p-6 space-y-4">
-                    <div class="border-b border-zinc-800/80 pb-4">
-                        <h3 class="font-outfit font-bold text-lg text-white">Struktur Microcycle Mingguan (7 Hari)</h3>
-                        <p class="text-xs text-zinc-500 mt-1">Ikuti urutan beban latihan dan hari pemulihan untuk adaptasi fisiologis optimal.</p>
-                    </div>
-
-                    <div id="weekly-schedule-list" class="space-y-3">
-                        <!-- Filled dynamically by JS -->
-                    </div>
-
-                    <!-- International Coach Advisory Note -->
-                    <div class="mt-6 p-4 rounded-xl bg-amber-500/5 border border-amber-500/20 text-xs text-zinc-300 space-y-1.5 leading-relaxed">
-                        <p class="font-semibold text-amber-400 uppercase tracking-wider text-[11px]">Catatan Arahan Pelatih Bersertifikat:</p>
-                        <p>• <strong>Aturan 80/20:</strong> 80% total volume mingguan harus dilakukan di Zona 2 (Easy Run — masih bisa berbicara kalimat penuh dengan nyaman).</p>
-                        <p>• <strong>Pemanasan & Pendinginan:</strong> Selalu awali sesi Tempo/Interval dengan 10 menit jalan cepat + joging ringan dan dynamic drills, lalu tutup dengan 5–10 menit cool-down.</p>
-                        <p>• <strong>Hidrasi & Pemulihan:</strong> Prioritaskan tidur 7–8 jam dan asupan elektrolit terutama setelah sesi Long Run.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </main>
-
-    <!-- ========================================================= -->
-    <!-- MODAL: GANTI PASSWORD (SAAT SUDAH LOGIN)                  -->
-    <!-- ========================================================= -->
-    <div id="modal-change-password" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-cardBg border border-amber-500/30 rounded-2xl w-full max-w-md p-6 sm:p-7 space-y-4 shadow-2xl">
-            <div class="flex justify-between items-center border-b border-zinc-800 pb-3">
-                <h3 class="font-outfit font-bold text-lg text-white">Ganti Password Akun</h3>
-                <button onclick="closeChangePasswordModal()" class="text-zinc-500 hover:text-white text-lg">&times;</button>
-            </div>
-
-            <div id="cp-alert" class="hidden p-3 rounded-xl text-xs border"></div>
-
-            <form onsubmit="submitChangePassword(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs text-zinc-400 mb-1.5">Password Saat Ini</label>
-                    <input type="password" id="cp-current" required placeholder="Masukkan password lama"
-                        class="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-amber-500/60">
-                </div>
-                <div>
-                    <label class="block text-xs text-zinc-400 mb-1.5">Password Baru (Minimal 6 karakter)</label>
-                    <input type="password" id="cp-new" minlength="6" required placeholder="Masukkan password baru"
-                        class="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-amber-500/60">
-                </div>
-                <div>
-                    <label class="block text-xs text-zinc-400 mb-1.5">Konfirmasi Password Baru</label>
-                    <input type="password" id="cp-confirm" minlength="6" required placeholder="Ulangi password baru"
-                        class="w-full px-4 py-2.5 rounded-xl bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-amber-500/60">
-                </div>
-                <div class="flex justify-end gap-2 pt-2">
-                    <button type="button" onclick="closeChangePasswordModal()" class="px-4 py-2 rounded-xl border border-zinc-800 text-xs text-zinc-400 hover:text-white">
-                        Batal
-                    </button>
-                    <button type="submit" id="btn-cp-submit" class="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-outfit font-bold text-xs uppercase tracking-wider">
-                        Simpan Password
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Footer -->
-    <footer class="w-full max-w-7xl mx-auto px-6 sm:px-10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 z-10 text-[11px] sm:text-xs text-zinc-600 border-t border-zinc-900/80">
+    <footer class="reveal-footer w-full max-w-7xl mx-auto px-6 sm:px-8 py-6 sm:py-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 z-10 text-[11px] sm:text-xs text-zinc-600 border-t border-zinc-900/80 text-center">
         <p>&copy; <span id="year"></span> I'M Production. All rights reserved.</p>
-        <div class="flex items-center gap-6">
-            <span class="text-zinc-500">improduction.web.id</span>
+        <div class="flex items-center gap-5 sm:gap-6">
+            <a href="#" class="hover:text-amber-400 transition-colors">Instagram</a>
+            <a href="#" class="hover:text-amber-400 transition-colors">YouTube</a>
+            <a href="#" class="hover:text-amber-400 transition-colors">Contact</a>
         </div>
     </footer>
 
     <script>
-        const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxo0N5AroYiGLDa159kPmL6MW1vixt7XasvfhlcSUP8Jt4PMwrD8iRC-IoRaw81l8696g/exec';
-        const SESSION_KEY = 'im_production_user_session';
-
+        // Auto update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        async function hashPassword(plainText) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(plainText);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
-
-        async function callGasApi(payload) {
-            const response = await fetch(GAS_WEB_APP_URL, {
-                method: 'POST',
-                redirect: 'follow',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8'
-                },
-                body: JSON.stringify(payload)
-            });
-            const text = await response.text();
-            return JSON.parse(text);
-        }
-
-        function showAlert(elementId, message, isSuccess = false) {
-            const el = document.getElementById(elementId);
-            el.textContent = message;
-            el.classList.remove('hidden', 'bg-red-950/60', 'border-red-500/40', 'text-red-300', 'bg-emerald-950/60', 'border-emerald-500/40', 'text-emerald-300');
-            if (isSuccess) {
-                el.classList.add('bg-emerald-950/60', 'border-emerald-500/40', 'text-emerald-300');
+        // Convert title text into individual staggered character spans for per-letter gold effect
+        const titleEl = document.getElementById('main-title');
+        const text = titleEl.textContent.trim();
+        titleEl.innerHTML = '';
+        
+        text.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            if (char === ' ') {
+                span.innerHTML = '&nbsp;';
             } else {
-                el.classList.add('bg-red-950/60', 'border-red-500/40', 'text-red-300');
+                span.textContent = char;
             }
-        }
-
-        function hideAlert(elementId) {
-            document.getElementById(elementId).classList.add('hidden');
-        }
-
-        function switchAuthTab(tab) {
-            hideAlert('auth-alert');
-            const formLogin = document.getElementById('form-login');
-            const formRegister = document.getElementById('form-register');
-            const formForgot = document.getElementById('form-forgot');
-            const tabLogin = document.getElementById('tab-login');
-            const tabRegister = document.getElementById('tab-register');
-            const authTabs = document.getElementById('auth-tabs');
-
-            formLogin.classList.add('hidden');
-            formRegister.classList.add('hidden');
-            formForgot.classList.add('hidden');
-
-            tabLogin.className = 'py-2.5 text-xs font-semibold uppercase tracking-wider rounded-lg text-zinc-400 hover:text-zinc-200 transition-all';
-            tabRegister.className = 'py-2.5 text-xs font-semibold uppercase tracking-wider rounded-lg text-zinc-400 hover:text-zinc-200 transition-all';
-
-            if (tab === 'login') {
-                authTabs.classList.remove('hidden');
-                formLogin.classList.remove('hidden');
-                tabLogin.className = 'py-2.5 text-xs font-semibold uppercase tracking-wider rounded-lg bg-gradient-to-r from-amber-500 to-yellow-600 text-black transition-all';
-            } else if (tab === 'register') {
-                authTabs.classList.remove('hidden');
-                formRegister.classList.remove('hidden');
-                tabRegister.className = 'py-2.5 text-xs font-semibold uppercase tracking-wider rounded-lg bg-gradient-to-r from-amber-500 to-yellow-600 text-black transition-all';
-            } else if (tab === 'forgot') {
-                authTabs.classList.add('hidden');
-                formForgot.classList.remove('hidden');
-            }
-        }
-
-        async function submitRegister(e) {
-            e.preventDefault();
-            hideAlert('auth-alert');
-
-            const fullName = document.getElementById('reg-name').value.trim();
-            const email = document.getElementById('reg-email').value.trim();
-            const password = document.getElementById('reg-password').value;
-            const btn = document.getElementById('btn-register');
-
-            btn.disabled = true;
-            btn.textContent = 'Mendaftarkan Akun...';
-
-            try {
-                const passwordHash = await hashPassword(password);
-                const res = await callGasApi({
-                    action: 'register',
-                    full_name: fullName,
-                    email: email,
-                    password_hash: passwordHash
-                });
-
-                if (res.ok) {
-                    showAlert('auth-alert', 'Registrasi berhasil! Silakan masuk menggunakan akun baru Anda.', true);
-                    document.getElementById('form-register').reset();
-                    document.getElementById('login-email').value = email;
-                    setTimeout(() => switchAuthTab('login'), 1200);
-                } else {
-                    showAlert('auth-alert', res.message || 'Gagal mendaftar. Coba lagi.');
-                }
-            } catch (err) {
-                showAlert('auth-alert', 'Koneksi ke server gagal. Periksa internet atau deployment Apps Script.');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Daftar Sekarang';
-            }
-        }
-
-        async function submitLogin(e) {
-            e.preventDefault();
-            hideAlert('auth-alert');
-
-            const email = document.getElementById('login-email').value.trim();
-            const password = document.getElementById('login-password').value;
-            const btn = document.getElementById('btn-login');
-
-            btn.disabled = true;
-            btn.textContent = 'Memverifikasi...';
-
-            try {
-                const passwordHash = await hashPassword(password);
-                const res = await callGasApi({
-                    action: 'login',
-                    email: email,
-                    password_hash: passwordHash
-                });
-
-                if (res.ok && res.user) {
-                    localStorage.setItem(SESSION_KEY, JSON.stringify(res.user));
-                    renderAppState();
-                } else {
-                    showAlert('auth-alert', res.message || 'Email atau password salah.');
-                }
-            } catch (err) {
-                showAlert('auth-alert', 'Koneksi ke server gagal. Periksa internet Anda.');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Masuk ke Member Area';
-            }
-        }
-
-        async function submitForgotPassword(e) {
-            e.preventDefault();
-            hideAlert('auth-alert');
-
-            const email = document.getElementById('forgot-email').value.trim();
-            const fullName = document.getElementById('forgot-name').value.trim();
-            const newPassword = document.getElementById('forgot-new-password').value;
-            const btn = document.getElementById('btn-forgot');
-
-            btn.disabled = true;
-            btn.textContent = 'Memproses Reset...';
-
-            try {
-                const newPasswordHash = await hashPassword(newPassword);
-                const res = await callGasApi({
-                    action: 'forgot_password',
-                    email: email,
-                    full_name: fullName,
-                    new_password_hash: newPasswordHash
-                });
-
-                if (res.ok) {
-                    showAlert('auth-alert', res.message || 'Password berhasil direset!', true);
-                    document.getElementById('form-forgot').reset();
-                    document.getElementById('login-email').value = email;
-                    setTimeout(() => switchAuthTab('login'), 1500);
-                } else {
-                    showAlert('auth-alert', res.message || 'Data tidak cocok.');
-                }
-            } catch (err) {
-                showAlert('auth-alert', 'Terjadi kesalahan koneksi.');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Reset Password';
-            }
-        }
-
-        function openChangePasswordModal() {
-            hideAlert('cp-alert');
-            document.getElementById('modal-change-password').classList.remove('hidden');
-        }
-
-        function closeChangePasswordModal() {
-            document.getElementById('modal-change-password').classList.add('hidden');
-        }
-
-        async function submitChangePassword(e) {
-            e.preventDefault();
-            hideAlert('cp-alert');
-
-            const sessionRaw = localStorage.getItem(SESSION_KEY);
-            if (!sessionRaw) return;
-            const user = JSON.parse(sessionRaw);
-
-            const currentPass = document.getElementById('cp-current').value;
-            const newPass = document.getElementById('cp-new').value;
-            const confirmPass = document.getElementById('cp-confirm').value;
-
-            if (newPass !== confirmPass) {
-                showAlert('cp-alert', 'Konfirmasi password baru tidak cocok.');
-                return;
-            }
-
-            const btn = document.getElementById('btn-cp-submit');
-            btn.disabled = true;
-            btn.textContent = 'Menyimpan...';
-
-            try {
-                const currentHash = await hashPassword(currentPass);
-                const newHash = await hashPassword(newPass);
-
-                const res = await callGasApi({
-                    action: 'change_password',
-                    email: user.email,
-                    current_password_hash: currentHash,
-                    new_password_hash: newHash
-                });
-
-                if (res.ok) {
-                    showAlert('cp-alert', 'Password berhasil diperbarui!', true);
-                    e.target.reset();
-                    setTimeout(() => closeChangePasswordModal(), 1300);
-                } else {
-                    showAlert('cp-alert', res.message || 'Gagal mengganti password.');
-                }
-            } catch (err) {
-                showAlert('cp-alert', 'Gagal terhubung ke server.');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Simpan Password';
-            }
-        }
-
-        function handleLogout() {
-            localStorage.removeItem(SESSION_KEY);
-            renderAppState();
-        }
-
-        function renderAppState() {
-            const sessionRaw = localStorage.getItem(SESSION_KEY);
-            const authView = document.getElementById('auth-view');
-            const dashboardView = document.getElementById('dashboard-view');
-            const navUserActions = document.getElementById('nav-user-actions');
-
-            if (sessionRaw) {
-                const user = JSON.parse(sessionRaw);
-                authView.classList.add('hidden');
-                dashboardView.classList.remove('hidden');
-                navUserActions.classList.remove('hidden');
-
-                document.getElementById('nav-user-name').textContent = user.full_name;
-                document.getElementById('nav-user-email').textContent = user.email;
-                document.getElementById('dash-user-greeting').textContent = user.full_name;
-
-                generateTrainingPlan();
-            } else {
-                authView.classList.remove('hidden');
-                dashboardView.classList.add('hidden');
-                navUserActions.classList.add('hidden');
-            }
-        }
-
-        function parsePaceToSeconds(paceStr) {
-            const parts = paceStr.trim().split(':');
-            if (parts.length !== 2) return 390;
-            const mins = parseInt(parts[0], 10);
-            const secs = parseInt(parts[1], 10);
-            if (isNaN(mins) || isNaN(secs)) return 390;
-            return (mins * 60) + secs;
-        }
-
-        function formatSecondsToPace(totalSecs) {
-            const m = Math.floor(totalSecs / 60);
-            const s = Math.round(totalSecs % 60);
-            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-        }
-
-        function generateTrainingPlan(e) {
-            if (e) e.preventDefault();
-
-            const distance = document.getElementById('run-distance').value;
-            const level = document.getElementById('run-level').value;
-            const days = parseInt(document.getElementById('run-days').value, 10);
-            const rawPace = document.getElementById('run-target-pace').value || '06:30';
-
-            const baseSecs = parsePaceToSeconds(rawPace);
-            const cleanTargetPace = formatSecondsToPace(baseSecs);
-
-            const easyLow = formatSecondsToPace(baseSecs + 45);
-            const easyHigh = formatSecondsToPace(baseSecs + 75);
-            const tempoLow = formatSecondsToPace(baseSecs + 5);
-            const tempoHigh = formatSecondsToPace(baseSecs + 15);
-            const intervalLow = formatSecondsToPace(Math.max(180, baseSecs - 25));
-            const intervalHigh = formatSecondsToPace(Math.max(190, baseSecs - 15));
-            const longLow = formatSecondsToPace(baseSecs + 35);
-            const longHigh = formatSecondsToPace(baseSecs + 60);
-
-            document.getElementById('display-target-pace').textContent = `${cleanTargetPace}/km`;
-            const levelLabel = level === 'beginner' ? 'Beginner' : level === 'intermediate' ? 'Intermediate' : 'Advanced';
-            document.getElementById('display-program-badge').textContent = `${distance} • ${levelLabel} • ${days}x/Minggu`;
-
-            const zones = [
-                { name: 'Zone 2 • Easy / Aerobic', pace: `${easyLow} – ${easyHigh}/km`, desc: 'Bangun kapiler darah & efisiensi lemak (HR 65–75% Max).' },
-                { name: 'Zone 3–4 • Tempo / Threshold', pace: `${tempoLow} – ${tempoHigh}/km`, desc: 'Tingkatkan ambang batas asam laktat secara stabil.' },
-                { name: 'Zone 4–5 • Interval / VO2max', pace: `${intervalLow} – ${intervalHigh}/km`, desc: 'Kapasitas serapan oksigen maksimal & running economy.' },
-                { name: 'Zone 2–3 • Long Run', pace: `${longLow} – ${longHigh}/km`, desc: 'Ketahanan otot, tendon, dan mental jarak jauh.' }
-            ];
-
-            document.getElementById('pace-zones-grid').innerHTML = zones.map(z => `
-                <div class="p-3.5 rounded-xl bg-zinc-950 border border-zinc-800/90 space-y-1">
-                    <p class="text-[11px] font-semibold text-amber-400">${z.name}</p>
-                    <p class="font-outfit font-bold text-base text-white">${z.pace}</p>
-                    <p class="text-[11px] text-zinc-500 leading-snug">${z.desc}</p>
-                </div>
-            `).join('');
-
-            const scale = (level === 'beginner' ? 0.75 : level === 'advanced' ? 1.25 : 1.0) *
-                          (distance === 'FM' ? 1.5 : distance === 'HM' ? 1.25 : distance === '5K' ? 0.85 : 1.0);
-
-            const easyDist = Math.max(3, Math.round(5 * scale));
-            const tempoDist = Math.max(4, Math.round(6 * scale));
-            const intervalReps = level === 'beginner' ? '5 x 400m' : level === 'advanced' ? '8 x 800m' : '6 x 600m';
-            const longDist = Math.max(6, Math.round((distance === 'FM' ? 18 : distance === 'HM' ? 12 : 8) * scale));
-
-            const weekPlan = [
-                {
-                    day: 'Senin',
-                    type: 'Rest & Mobility',
-                    badge: 'RECOVERY',
-                    color: 'text-zinc-400 border-zinc-800 bg-zinc-900/50',
-                    detail: 'Istirahat penuh dari lari. Lakukan 15 menit peregangan dinamis, foam rolling betis/hamstring, dan core stability.'
-                },
-                {
-                    day: 'Selasa',
-                    type: `Quality Session • Interval VO2max (${intervalReps})`,
-                    badge: 'KEY WORKOUT',
-                    color: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
-                    detail: `10 mnt Warm-up + ${intervalReps} di pace ${intervalLow}–${intervalHigh}/km (jeda joging ringan 90 detik antar repetisi) + 10 mnt Cool-down.`
-                },
-                {
-                    day: 'Rabu',
-                    type: days >= 4 ? `Aerobic Base • Easy Run (${easyDist} km)` : 'Active Recovery / Cross-Training',
-                    badge: days >= 4 ? 'AEROBIC' : 'RECOVERY',
-                    color: days >= 4 ? 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10' : 'text-zinc-400 border-zinc-800 bg-zinc-900/50',
-                    detail: days >= 4
-                        ? `Lari santai konstan sejauh ${easyDist} km di pace ${easyLow}–${easyHigh}/km. Jaga detak jantung tetap rendah di Zona 2.`
-                        : 'Jalan cepat 30–40 menit atau bersepeda santai untuk memperlancar aliran darah pemulihan otot.'
-                },
-                {
-                    day: 'Kamis',
-                    type: `Lactate Threshold • Tempo Run (${tempoDist} km)`,
-                    badge: 'KEY WORKOUT',
-                    color: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
-                    detail: `1.5 km Warm-up + ${Math.max(2, tempoDist - 2)} km lari ritme terkontrol di pace ${tempoLow}–${tempoHigh}/km + 1 km Cool-down.`
-                },
-                {
-                    day: 'Jumat',
-                    type: 'Strength & Conditioning (Runner Specific)',
-                    badge: 'STRENGTH',
-                    color: 'text-sky-400 border-sky-500/30 bg-sky-500/10',
-                    detail: '3 set: Single-leg squat (10x/kaki), Calf raises (15x), Glute bridge (15x), dan Plank (45 detik) untuk mencegah cedera lutut & shin splints.'
-                },
-                {
-                    day: 'Sabtu',
-                    type: days >= 5 ? `Shakeout Easy Run (${Math.max(3, easyDist - 1)} km)` : 'Rest & Hydration Prep',
-                    badge: days >= 5 ? 'AEROBIC' : 'RECOVERY',
-                    color: days >= 5 ? 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10' : 'text-zinc-400 border-zinc-800 bg-zinc-900/50',
-                    detail: days >= 5
-                        ? `Joging ringan ${Math.max(3, easyDist - 1)} km pace ${easyHigh}/km + 4x80m strides ringan untuk menjaga kelenturan kaki jelang Long Run.`
-                        : 'Istirahat total, penuhi hidrasi & karbohidrat kompleks sebagai persiapan sesi Long Run besok pagi.'
-                },
-                {
-                    day: 'Minggu',
-                    type: `Endurance Builder • Long Run (${longDist} km)`,
-                    badge: 'LONG RUN',
-                    color: 'text-amber-300 border-amber-400/40 bg-amber-500/15',
-                    detail: `Lari jarak jauh terkontrol sejauh ${longDist} km di pace ${longLow}–${longHigh}/km. Latih strategi hidrasi & nutrisi tiap 30–40 menit.`
-                }
-            ];
-
-            document.getElementById('weekly-schedule-list').innerHTML = weekPlan.map(item => `
-                <div class="p-4 rounded-xl bg-zinc-950/90 border border-zinc-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                    <div class="space-y-1">
-                        <div class="flex items-center gap-2.5">
-                            <span class="font-outfit font-bold text-xs uppercase tracking-wider text-zinc-400 w-16">${item.day}</span>
-                            <span class="px-2 py-0.5 rounded text-[10px] font-semibold border ${item.color}">${item.badge}</span>
-                            <span class="font-outfit font-semibold text-sm text-white">${item.type}</span>
-                        </div>
-                        <p class="text-xs text-zinc-400 sm:pl-[74px] leading-relaxed">${item.detail}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        renderAppState();
+            // Stagger animation delay per letter for wave effect
+            span.style.animationDelay = `${(index * 0.08)}s`;
+            titleEl.appendChild(span);
+        });
     </script>
 </body>
 </html>
